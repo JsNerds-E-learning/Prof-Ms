@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,7 +24,7 @@ public class ProfController {
 ProfService profService;
 @Autowired
 GradeService gradeService;
-
+@RequestMapping(value = "/actuator/info")
 @GetMapping("/retrieve-all-users")
 @ResponseBody
 public List<Prof> getUsers(){
@@ -31,26 +32,26 @@ public List<Prof> getUsers(){
 	return prof;
 }
 
-@GetMapping("/retrieve-user/{id}")
+@GetMapping("/retrieve-prof/{id}")
 @ResponseBody
 public Prof getUserById(@PathVariable("id") String id_user){
 	return profService.retrieveUser(id_user);
 }
-@PostMapping("/add-user")
+@PostMapping("/add-prof")
 @ResponseBody
 public String addUser(@RequestBody Prof u){
 	Grade r= gradeService.addRole(u.getRole());
 	Prof prof= profService.addUser(u);
-	return "this is user:"+prof+"and this is his role:"+r ;
+	return "this is prof:"+prof+"and this is his prof:"+r ;
 }
 
-@DeleteMapping("/delete-user")
+@DeleteMapping("/delete-prof{id}")
 @ResponseBody
 public void deleteUser(@PathVariable("id") String id_user){
 	profService.deleteUser(id_user);
 }
 
-@PutMapping("/update-user")
+@PutMapping("/update-prof")
 @ResponseBody
 public Prof UpdateUser(@RequestBody Prof prof){
 	return profService.updateUser(prof);

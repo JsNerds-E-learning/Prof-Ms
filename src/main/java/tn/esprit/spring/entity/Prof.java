@@ -17,7 +17,7 @@ import javax.persistence.TemporalType;
 import org.hibernate.annotations.CascadeType;
 import org.springframework.beans.factory.annotation.Autowired;
 @Entity
-@Table(name= "USER")
+@Table(name= "PROF")
 public class Prof implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
@@ -33,7 +33,7 @@ public class Prof implements Serializable {
 
 
 	@OneToOne
-	@JoinColumn(name = "Role_name")
+	@JoinColumn(name = "Grade_name")
     private Grade grade;
    @Temporal (TemporalType.DATE)
    private Date date_naissance;

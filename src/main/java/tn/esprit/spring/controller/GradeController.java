@@ -19,32 +19,32 @@ public class GradeController {
 	@Autowired 
 	GradeService gradeService;
 
-	@GetMapping("/retrieve-all-roles")
+	@GetMapping("/retrieve-all-grades")
 	@ResponseBody
 	public List<Grade> getroles(){
 		List<Grade> grade = gradeService.retrieveAllRoles();
 		return grade;
 	}
 
-	@GetMapping("/retrieve-role/{id}")
+	@GetMapping("/retrieve-grade/{id}")
 	@ResponseBody
 	public Grade getroleById(@PathVariable("id") String id_role){
 		return gradeService.retrieveRole(id_role);
 	}
-	@PostMapping("/add-role")
+	@PostMapping("/add-grade")
 	@ResponseBody
 	public Grade addrole(@RequestBody Grade u){
 		Grade grade= gradeService.addRole(u);
 		return grade;
 	}
 
-	@DeleteMapping("/delete-role")
+	@DeleteMapping("/delete-grade/{id}")
 	@ResponseBody
 	public void deleterole(@PathVariable("id") String id_role){
 		gradeService.deleteRole(id_role);
 	}
 
-	@PutMapping("/update-role")
+	@PutMapping("/update-grade")
 	@ResponseBody
 	public Grade Updaterole(@RequestBody Grade grade){
 		return gradeService.updateRole(grade);

@@ -10,53 +10,53 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 		@Entity
-		@Table(name= "ROLE")
+		@Table(name= "GRADE")
 		public class Grade implements Serializable {
 			private static final long serialVersionUID = 1L;
 			@Id
 			@GeneratedValue (strategy= GenerationType.IDENTITY)
 			private long id_Role;
 			
-			private String role_name;
-			private String role_desc;
+			private String grade_name;
+			private String grade_desc;
 			public long getId_Role() {
 				return id_Role;
 			}
 			public void setId_Role(long id_Role) {
 				this.id_Role = id_Role;
 			}
-			public String getRole_name() {
-				return role_name;
+			public String getGrade_name() {
+				return grade_name;
 			}
-			public void setRole_name(String role_name) {
-				this.role_name = role_name;
+			public void setGrade_name(String grade_name) {
+				this.grade_name = grade_name;
 			}
-			public String getRole_desc() {
-				return role_desc;
+			public String getGrade_desc() {
+				return grade_desc;
 			}
-			public void setRole_desc(String role_desc) {
-				this.role_desc = role_desc;
+			public void setGrade_desc(String grade_desc) {
+				this.grade_desc = grade_desc;
 			}
 			public static long getSerialversionuid() {
 				return serialVersionUID;
 			}
 			@Override
 			public String toString() {
-				return "Role [id_Role=" + id_Role + ", role_name=" + role_name + ", role_desc=" + role_desc + "]";
+				return "grade [id_Role=" + id_Role + ", grade_name=" + grade_name + ", grade_desc=" + grade_desc + "]";
 			}
-			public Grade(long id_Role, String role_name, String role_desc) {
+			public Grade(long id_Role, String grade_name, String grade_desc) {
 				super();
 				this.id_Role = id_Role;
-				this.role_name = role_name;
-				this.role_desc = role_desc;
+				this.grade_name = grade_name;
+				this.grade_desc = grade_desc;
 			}
 			public Grade() {
 				super();
 				// TODO Auto-generated constructor stub
 			}
 			public Grade(Grade r){
-				this.role_name = r.role_name;
-				this.role_desc = r.role_desc;
+				this.grade_name = r.grade_name;
+				this.grade_desc = r.grade_desc;
 			}
 		
 	

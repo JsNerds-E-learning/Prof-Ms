@@ -39,10 +39,10 @@ like the server we created the gateway with spring boot and netflix zuul as depe
     "salaire_user":"55",
     "sexe_user":"m",
     "grade":"2eme dame"
-    "tel_user":"2556586"
+    "tel_user":"2556586"}
 
 
-}
+
 #### **List prof**
 <hr>
 to list all the prof you need to:
